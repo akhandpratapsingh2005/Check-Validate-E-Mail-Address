@@ -1,68 +1,37 @@
-Email Validator in Python
-This is a simple Python script that validates an email address based on a set of predefined rules. It checks for format correctness such as length, placement of special characters, and character restrictions.
+# Email Validation Script in Python
 
-Features
-Ensures the email:
+This repository contains a simple Python script that validates an email address based on custom rules. It uses basic string and character checks without relying on external libraries.
 
-Is at least 6 characters long
+## 🔍 Features
 
-Starts with an alphabet
+- Ensures the email:
+  - Is at least 6 characters long
+  - Starts with an alphabet
+  - Contains exactly one `@` symbol
+  - Ends with a domain like `.com` or `.in` (i.e., a `.` at the 3rd or 4th position from the end)
+  - Does not contain:
+    - Whitespaces
+    - Uppercase letters
+    - Invalid special characters
 
-Contains exactly one '@' symbol
+## ✅ Allowed Special Characters
 
-Ends with a domain extension like .com or .in
+- Underscore (`_`)
+- Dot (`.`)
+- At symbol (`@`)
 
-Does not contain whitespace
+## ❌ Invalid Email Examples
 
-Does not contain uppercase letters
+- `Example@domain.com` – contains uppercase letters
+- `example domain@com` – contains whitespace
+- `example@domain!.com` – contains invalid special characters
+- `ex@co` – less than 6 characters
+- `1example@domain.com` – does not start with an alphabet
+- `example@domain@com` – more than one `@` symbol
 
-Does not contain invalid special characters
+## 💡 Usage
 
-Validation Rules
-The script follows these validation steps:
+Run the script using any Python 3 interpreter:
 
-Minimum Length: Email must be at least 6 characters long.
-
-Start Character: The first character must be a lowercase alphabet.
-
-@ Symbol: Must contain exactly one '@' symbol.
-
-Domain Check: Must end with .com or .in (i.e., the '.' must be at the 3rd or 4th position from the end).
-
-Character Rules:
-
-No whitespace characters
-
-No uppercase letters
-
-Only allowed special characters: _, ., and @
-
-Example Output
-bash
-Copy
-Edit
-Enter your Email  : John.Doe@example.com
-Wrong Email 5
-
-Enter your Email  : john.doe@example.com
-Right email
-How to Use
-Clone the repository or download the script.
-
-Run the script using Python 3:
-
-bash
-Copy
-Edit
+```bash
 python email_validator.py
-Enter an email when prompted to check its validity.
-
-File Structure
-bash
-Copy
-Edit
-.
-├── email_validator.py  # Main validation script
-└── README.md           # Project documentation
-License
-This project is licensed under the MIT License.
